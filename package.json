@@ -1,31 +1,50 @@
 {
-  "name": "nuxt-app",
+  "name": "nuxt-tailwind-typescript-template",
   "type": "module",
   "private": true,
-  "packageManager": "yarn@4.9.2",
+  "packageManager": "bun@1.2.17",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "dev:prepare": "nuxt prepare",
+    "lint-staged": "lint-staged",
+    "commitlint": "commitlint",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
     "@nuxt/fonts": "^0.11.4",
-    "@nuxt/icon": "^1.13.0",
+    "@nuxt/icon": "^1.15.0",
     "@nuxt/image": "^1.10.0",
-    "nuxt": "^3.17.5"
+    "nuxt": "^3.17.6"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^4.14.1",
+    "@antfu/eslint-config": "^4.16.1",
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
     "@nuxt/eslint": "^1.4.1",
-    "@tailwindcss/postcss": "^4.1.10",
-    "@tailwindcss/vite": "^4.1.10",
-    "eslint": "^9.29.0",
-    "eslint-plugin-better-tailwindcss": "^3.2.0",
-    "tailwindcss": "^4.1.10",
+    "@tailwindcss/postcss": "^4.1.11",
+    "@tailwindcss/vite": "^4.1.11",
+    "@types/bun": "^1.2.17",
+    "eslint": "^9.30.1",
+    "eslint-plugin-better-tailwindcss": "^3.4.3",
+    "lint-staged": "^16.1.2",
+    "simple-git-hooks": "^2.13.0",
+    "tailwindcss": "^4.1.11",
     "typescript": "^5.8.3"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "simple-git-hooks": {
+    "pre-commit": "bun lint-staged",
+    "commit-msg": "bun commitlint --edit ${1}"
+  },
+  "lint-staged": {
+    "*": "eslint --fix"
   }
 }
