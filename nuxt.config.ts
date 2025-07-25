@@ -1,7 +1,7 @@
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineNuxtConfig({
-  css: ['~/assets/css/main.css'],
+  css: ['~/assets/main.css'],
   app: {
     head: {
       htmlAttrs: {
@@ -9,7 +9,7 @@ export default defineNuxtConfig({
       },
     },
   },
-  modules: ['@nuxt/eslint', '@nuxt/fonts', '@nuxt/image', '@nuxt/icon'],
+  modules: ['@nuxt/eslint', '@nuxt/image', '@nuxt/icon'],
   eslint: {
     config: {
       standalone: false,
@@ -25,4 +25,5 @@ export default defineNuxtConfig({
       tailwindcss(),
     ],
   },
+  compatibilityDate: '2025-07-25',
 })

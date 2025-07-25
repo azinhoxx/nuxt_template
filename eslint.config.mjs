@@ -15,6 +15,7 @@ export default antfu(
   },
   {
     rules: {
+      'style/brace-style': ['error', '1tbs'],
       'antfu/top-level-function': 'off',
       'ts/consistent-type-definitions': 'off',
       'ts/no-unsafe-function-type': 'off',
@@ -30,7 +31,7 @@ export default antfu(
     },
     settings: {
       'better-tailwindcss': {
-        entryPoint: './src/assets/main.css',
+        entryPoint: './app/assets/main.css',
       },
     },
     rules: {
