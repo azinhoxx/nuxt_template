@@ -2,15 +2,13 @@
   "name": "nuxt-template",
   "type": "module",
   "private": true,
-  "packageManager": "bun@1.2.19",
+  "packageManager": "bun@1.3.10",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "dev:prepare": "nuxt prepare",
-    "lint-staged": "lint-staged",
-    "commitlint": "commitlint",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
   },
@@ -21,29 +19,13 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^7.3.0",
-    "@commitlint/cli": "^20.4.1",
-    "@commitlint/config-conventional": "^20.4.1",
     "@nuxt/eslint": "^1.14.0",
     "@tailwindcss/postcss": "^4.1.18",
     "@tailwindcss/vite": "^4.1.18",
     "@types/bun": "^1.3.8",
     "eslint": "^10.0.0",
     "eslint-plugin-better-tailwindcss": "^4.1.1",
-    "lint-staged": "^16.2.7",
-    "simple-git-hooks": "^2.13.1",
     "tailwindcss": "^4.1.18",
     "typescript": "^5.9.3"
   },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
-  },
-  "simple-git-hooks": {
-    "pre-commit": "bun lint-staged",
-    "commit-msg": "bun commitlint --edit ${1}"
-  },
-  "lint-staged": {
-    "*": "eslint --fix"
-  }
 }
